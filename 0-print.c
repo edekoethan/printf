@@ -28,12 +28,10 @@ int _printf(const char *format, ...)
 	va_list args;
 	int count = 0;
 
-	if(format == NULL)
+	if (format == NULL)
 		return (-1);
-
 	va_start(args, format);
-
-	while (*format)
+	while (*format && *format != '\0')
 	{
 		if (*format == '%')
 		{
@@ -41,31 +39,29 @@ int _printf(const char *format, ...)
 			if (*format == 'c')
 			{
 				char c = (char)va_arg(args, int);
+
 				count += _putchar(c);
-				break;
-			} else if (*format == 's')
+				continue;
+			}
+			if (*format == 's')
 			{
 				char *s = va_arg(args, char*);
+
 				while (*s)
-				{
 					count += _putchar(*s++);
-				}
-				break;
-			} else if (*format == '%')
-			{
-				count += _putchar('%');
-				break;
-			} else
-			{
-				count += _putchar('%');
-				count += _putchar(*format);
-				break;
+				continue;
 			}
-		} else 
+			if (*format == '%')
+			{
+				count += _putchar('%');
+				continue;
+			}
+			count += _putchar('%');
+			count += _putchar(*format);
+		} else
 			count += _putchar(*format);
 		++format;
 	}
 	va_end(args);
-
 	return (count);
 }
