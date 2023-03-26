@@ -41,23 +41,16 @@ int _printf(const char *format, ...)
 				char c = (char)va_arg(args, int);
 
 				count += _putchar(c);
-				continue;
-			}
-			if (*format == 's')
+			} else if (*format == 's')
 			{
 				char *s = va_arg(args, char*);
 
 				while (*s)
 					count += _putchar(*s++);
-				continue;
-			}
-			if (*format == '%')
+			} else if (*format == '%')
 			{
 				count += _putchar('%');
-				continue;
 			}
-			count += _putchar('%');
-			count += _putchar(*format);
 		} else
 			count += _putchar(*format);
 		++format;
