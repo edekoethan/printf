@@ -1,5 +1,6 @@
 #include <unistd.h>
 #include <stdarg.h>
+#include "main.h"
 
 /**
  * _putchar - writes a char to stdout
@@ -11,7 +12,6 @@ int _putchar(char c)
 {
 	return (write(1, &c, 1));
 }
-
 
 
 /**
@@ -38,18 +38,22 @@ int _printf(const char *format, ...)
 			++format;
 			if (*format == 'c')
 			{
-				char c = (char)va_arg(args, int);
-
-				count += _putchar(c);
+				print_char(args, count);
 			} else if (*format == 's')
 			{
-				char *s = va_arg(args, char*);
-
-				while (*s)
-					count += _putchar(*s++);
+				print_string(args, count);
 			} else if (*format == '%')
 			{
 				count += _putchar('%');
+			} else if (*format == 'd')
+			{
+				print_int(args, count);
+			} else if (*format == 'i')
+			{
+				print_int(args, count);
+			} else if (*format == 'b')
+			{
+				print_binary(args, count);
 			}
 		} else
 			count += _putchar(*format);
