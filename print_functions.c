@@ -8,7 +8,7 @@
  */
 int print_int(va_list arg, int count)
 {
-	int n = va_arg(arg, int);
+		int n = va_arg(arg, int);
 	char buffer[12];
 	int i = 0;
 
