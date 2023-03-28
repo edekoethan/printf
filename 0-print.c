@@ -29,8 +29,11 @@ int _printf(const char *format, ...)
 	int count = 0;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 	if (format == NULL)
 		return (-1);
+=======
+>>>>>>> parent of 1f08886... updating 0-print.c
 =======
 >>>>>>> parent of 1f08886... updating 0-print.c
 	va_start(args, format);
