@@ -1,6 +1,7 @@
 0x11. C-printf
 
 team project
+Authors : JohnPaul Odour
 
 #Task 0
 int _printf(const char *format, ...);
@@ -33,8 +34,6 @@ Use a local buffer of 1024 chars in order to call write as little as possible.
 #Task 5
 Handle the following custom conversion specifier:
 
-	S : prints the string.
-	Non printable characters (0 < ASCII value < 32 or >= 127) are printed this way: \x, followed by the ASCII code value in hexadecimal (upper case - always 2 characters)
 
 #Task 6
 Handle the following conversion specifier: p
