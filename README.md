@@ -1,7 +1,7 @@
 0x11. C-printf
 
 team project
-Authors : JohnPaul Odour
+Authors : JohnPaul Odour, Edeko Eromosele
 
 #Task 0
 int _printf(const char *format, ...);
